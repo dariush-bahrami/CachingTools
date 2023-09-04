@@ -3,7 +3,7 @@
 ## Description
 
 This repository contains a set of tools to help with caching the results of
-expensive computations in Python.
+expensive computations in Python. Refer to `usage.ipynb` for examples.
 
 ## Dependencies
 
