@@ -44,7 +44,7 @@ capacity={self.capacity})"
         return sum(f.stat().st_size for f in self.directory.glob("**/*") if f.is_file())
 
     def purge(self) -> None:
-        """Delete all cache files in the cache directory."""
+        """Delete the entire cache directory."""
         shutil.rmtree(self.directory)
 
     def shrink(self, size: int) -> None:
@@ -108,9 +108,3 @@ capacity={self.capacity})"
             return wrapper
 
         return decorator
-
-    def __enter__(self) -> "CacheToDisk":
-        return self
-
-    def __exit__(self, exc_type, exc_value, exc_traceback):
-        self.purge()
